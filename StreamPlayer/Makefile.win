@@ -1,0 +1,29 @@
+# Project: Stream Player
+# Makefile created by Dev-C++ 5.4.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "../../../Rasika/Dev\ cpp/Ply/main.o"
+LINKOBJ  = "../../../Rasika/Dev cpp/Ply/main.o"
+LIBS     = -L"E:/Softwares/Old collection/Dev C++ (portable)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc Lib/libfmod.a 
+INCS     = -I"E:/Softwares/Old collection/Dev C++ (portable)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"E:/Softwares/Old collection/Dev C++ (portable)/Dev-Cpp/MinGW32/include"
+BIN      = "Stream Player.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"../../../Rasika/Dev\ cpp/Ply/main.o": ../../../Rasika/Dev\ cpp/Ply/main.cpp
+	$(CPP) -c "../../../Rasika/Dev cpp/Ply/main.cpp" -o "../../../Rasika/Dev cpp/Ply/main.o" $(CXXFLAGS)
